@@ -13,7 +13,7 @@ tag="latest"
 
 docker build -t ${image}:${tag}
 
-if [[ "$TRAVIS_BRANCH" == "master" && "$TRAVIS_PULL_REQUEST" == false ]]; then
+if [[ "$TRAVIS_BRANCH" == "main" && "$TRAVIS_PULL_REQUEST" == false ]]; then
     docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     docker push ${image}:${tag}
 fi
